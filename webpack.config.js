@@ -36,7 +36,8 @@ module.exports = (env) => {
       minimizer: env.mode === 'production' ? [jsUglifyProduction] : [],
     },
     module: {
-      rules: [{
+      rules: [
+        {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
           resolve: {
@@ -47,11 +48,25 @@ module.exports = (env) => {
           }
         },
         {
+          test: /\.scss$/,
+          use: [
+            { loader: "style-loader" },
+            { loader: "css-loader" },
+            { loader: "sass-loader" }
+          ]
+        },
+        {
           test: /\.html$/,
           use: [{
             loader: "html-loader"
           }]
-        }
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: [
+           'file-loader'
+         ]
+       }
       ]
     },
     plugins: [
