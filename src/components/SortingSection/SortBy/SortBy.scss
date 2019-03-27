@@ -1,0 +1,33 @@
+@import '../../../index.scss';
+
+.sort-filters {
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+
+  input[type=radio] {
+    display: none;
+
+    & + label {
+      color: #000;
+      transition: all .2s ease;
+      margin-left: 15px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    &:checked + label {
+      color: $mainTextColor;
+      margin-left: 15px;
+      transition: all .2s ease;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  }
+
+  * {
+    font-weight: bold;
+  }
+}
