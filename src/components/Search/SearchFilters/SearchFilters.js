@@ -1,6 +1,8 @@
 import React from 'react'
 
 import './SearchFilters.scss'
+import './Filter/Filter.scss'
+import Filter from './Filter/Filter'
 
 const SearchFiltes = () => {
   return (
@@ -8,8 +10,8 @@ const SearchFiltes = () => {
       <p>
         Search by
       </p>
-      <input id='title' name='search' type='radio' value='TITLE' defaultChecked /><label htmlFor='title'>Title</label>
-      <input id='director' name='search' type='radio' value='DIRECTOR' /><label htmlFor='director'>Director</label>
+      <Filter inputId='title' inputName='search' inputType='radio' inputValue='TITLE' inputText='Title' checkedByDefault />
+      <Filter inputId='director' inputName='search' inputType='radio' inputValue='DIRECTOR' inputText='Director' />
     </div>
   )
 }
