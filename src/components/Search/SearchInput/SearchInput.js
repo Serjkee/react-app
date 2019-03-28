@@ -1,10 +1,15 @@
 import React from 'react'
 import './SearchInput.scss'
 
-const SearchInput = () => {
+const SearchInput = (props) => {
+  let inputClass = '';
+  if (props.inputClass === 'search') {
+    inputClass = 'search-input';
+  } 
+
   return (
     <div>
-      <input className='search-input' placeholder='Example: Quentin Tarantino' />
+      <input className={inputClass} placeholder={props.placeholder} />
     </div>
   )
 }

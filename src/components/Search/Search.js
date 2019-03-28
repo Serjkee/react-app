@@ -9,10 +9,10 @@ export class Search extends Component {
   render() {
     return (
       <form>
-        <SearchInput />
+        <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' />
         <div className='header-filters' >
           <SearchFilters />
-          <SearchButton />
+          <SearchButton buttonText='Search' buttonClass='filter' />
         </div>
       </form>
     )

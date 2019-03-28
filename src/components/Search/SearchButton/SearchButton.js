@@ -1,10 +1,15 @@
 import React from 'react'
 import './SearchButton.scss'
 
-const SearchButton = () => {
+const SearchButton = (props) => {
+  let buttonClass = '';
+  if (props.buttonClass === 'filter') {
+    buttonClass = 'search-button';
+  } 
+
   return (
     <div>
-      <button className='search-button' >Search</button>
+      <button className={buttonClass} >{props.buttonText}</button>
     </div>
   )
 }
