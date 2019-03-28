@@ -4,6 +4,7 @@ import './Header.scss'
 import FindYourMovie from '../../components/Header/FindYourMovie/FindYourMovie'
 import NetflixLogo from '../../components/NetflixLogo/NetflixLogo'
 import Search from '../../components/Search/Search'
+import OneCardFilm from '../../components/OneFilmCard/OneFilmCard'
 
 export class Header extends Component {
   render() {
@@ -11,8 +12,9 @@ export class Header extends Component {
       <div className='header-image'>
         <div className='header'>
           <NetflixLogo />
-          <FindYourMovie />
-          <Search />
+          <OneCardFilm />
+          {/* <FindYourMovie />
+          <Search /> */}
         </div>
       </div>
     )
