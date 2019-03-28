@@ -10,8 +10,8 @@ const SearchFiltes = () => {
       <p>
         Search by
       </p>
-      <Filter inputId='title' inputName='search' inputType='radio' inputValue='TITLE' inputText='Title' checkedByDefault />
-      <Filter inputId='director' inputName='search' inputType='radio' inputValue='DIRECTOR' inputText='Director' />
+      <Filter inputId='title' inputClass='main-filter' inputName='search' inputType='radio' inputValue='TITLE' inputText='Title' checkedByDefault />
+      <Filter inputId='director' inputClass='main-filter' inputName='search' inputType='radio' inputValue='DIRECTOR' inputText='Director' />
     </div>
   )
 }

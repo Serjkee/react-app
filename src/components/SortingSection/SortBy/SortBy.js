@@ -1,6 +1,7 @@
 import React from 'react'
 
 import './SortBy.scss'
+import Filter from '../../Search/SearchFilters/Filter/Filter'
 
 const SortBy = () => {
   return (
@@ -8,8 +9,8 @@ const SortBy = () => {
       <p>
         Sort by
       </p>
-      <input id='release' name='sort' type='radio' value='RELEASE' defaultChecked /><label htmlFor='release'>release date</label>
-      <input id='rating' name='sort' type='radio' value='RATING' /><label htmlFor='rating'>rating</label>
+      <Filter inputId='release' inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='RELEASE' inputText='release date' checkedByDefault />
+      <Filter inputId='rating' inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='RATING' inputText='rating' />
     </div>
   )
 }

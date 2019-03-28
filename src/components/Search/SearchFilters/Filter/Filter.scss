@@ -1,6 +1,6 @@
 @import '../../../../index.scss';
 
-input[type=radio] {
+.main-filter {
   display: none;
 
   & + label {
@@ -17,6 +17,26 @@ input[type=radio] {
     padding: 4px 10px;
     margin-left: 20px;
     transition: all .3s ease;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+}
+
+.secondary-filter {
+  display: none;
+
+  & + label {
+    color: #000;
+    transition: all .2s ease;
+    margin-left: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  &:checked + label {
+    color: $mainTextColor;
+    margin-left: 15px;
+    transition: all .2s ease;
     border-radius: 3px;
     cursor: pointer;
   }
