@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import CardItem from '../../components/CardSection/CardItem'
-import './Card.scss'
+import './Cards.scss'
 
 export class Card extends Component {
   render() {
