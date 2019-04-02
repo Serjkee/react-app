@@ -2,8 +2,13 @@
 
 exports[`Tests SortingSection container Matching snapshot 1`] = `
 <div
-  className="sorting-section"
+  className="sorting-section-wrapper"
 >
-  <FilmsByGenre />
+  <div
+    className="sorting-section"
+  >
+    <MoviesFound />
+    <SortBy />
+  </div>
 </div>
 `;
