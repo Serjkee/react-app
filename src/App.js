@@ -15,8 +15,8 @@ export class App extends Component {
         <div className='app-wrapper'>
           <Header />
           <SortingSection />
-          <NoFilmsFound />
-          {/* <Cards /> */}
+          {/* <NoFilmsFound /> */}
+          <Cards />
           <Footer />
         </div>
       </ErrorBoundary>

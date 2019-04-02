@@ -2,7 +2,9 @@
 
 exports[`App Adds App snapshot testing 1`] = `
 <ErrorBoundary>
-  <div>
+  <div
+    className="app-wrapper"
+  >
     <Header />
     <SortingSection />
     <Card />

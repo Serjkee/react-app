@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Header container Matching snapshot 1`] = `
+<div
+  className="header-image"
+>
+  <div
+    className="header"
+  >
+    <NetflixLogo />
+    <OneFilmCard />
+  </div>
+</div>
+`;

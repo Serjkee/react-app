@@ -8,10 +8,12 @@ import './SortingSection.scss'
 export class SortingSection extends Component {
   render() {
     return (
-      <div className='sorting-section'>
-        {/* <MoviesFound />
-        <SortBy /> */}
-        <FilmsByGenre />
+      <div className='sorting-section-wrapper'>
+        <div className='sorting-section'>
+          <MoviesFound />
+          <SortBy />
+          {/* <FilmsByGenre /> */}
+        </div>
       </div>
     )
   }

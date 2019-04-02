@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests Search component Matching snapshot 1`] = `
+<form>
+  <SearchInput
+    inputClass="search"
+    placeholder="Example: Quentin Tarantino"
+  />
+  <div
+    className="header-filters"
+  >
+    <SearchFiltes />
+    <SearchButton
+      buttonClass="filter"
+      buttonText="Search"
+    />
+  </div>
+</form>
+`;
