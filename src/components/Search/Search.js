@@ -6,9 +6,19 @@ import SearchFilters from './SearchFilters/SearchFilters'
 import './Search.scss'
 
 export class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {clicked: ''}
+  }
+
+  submitForm(e) {
+    e.preventDefault();
+    this.setState({clicked: 'event fired'});
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.submitForm.bind(this)}>
         <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' />
         <div className='header-filters' >
           <SearchFilters />

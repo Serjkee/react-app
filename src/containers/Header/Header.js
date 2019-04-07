@@ -12,9 +12,9 @@ export class Header extends Component {
       <div className='header-image'>
         <div className='header'>
           <NetflixLogo />
-          <OneCardFilm />
-          {/* <FindYourMovie />
-          <Search /> */}
+          {/* <OneCardFilm /> */}
+          <FindYourMovie />
+          <Search />
         </div>
       </div>
     )

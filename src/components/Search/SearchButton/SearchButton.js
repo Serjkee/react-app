@@ -5,11 +5,11 @@ const SearchButton = (props) => {
   let buttonClass = '';
   if (props.buttonClass === 'filter') {
     buttonClass = 'search-button';
-  } 
+  }
 
   return (
     <div>
-      <button className={buttonClass} >{props.buttonText}</button>
+      <button className={buttonClass}>{props.buttonText}</button>
     </div>
   )
 }

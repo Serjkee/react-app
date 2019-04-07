@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests Search component Matching snapshot 1`] = `
-<form>
+<form
+  onSubmit={[Function]}
+>
   <SearchInput
     inputClass="search"
     placeholder="Example: Quentin Tarantino"

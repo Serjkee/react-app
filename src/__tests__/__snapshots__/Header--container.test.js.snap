@@ -8,7 +8,8 @@ exports[`Tests Header container Matching snapshot 1`] = `
     className="header"
   >
     <NetflixLogo />
-    <OneFilmCard />
+    <FindYourMovie />
+    <Search />
   </div>
 </div>
 `;
