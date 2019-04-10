@@ -8,12 +8,10 @@ import './Search.scss'
 export class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {clicked: ''}
   }
 
   submitForm(e) {
     e.preventDefault();
-    this.setState({clicked: 'event fired'});
   }
 
   render() {
