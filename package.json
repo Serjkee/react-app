@@ -47,6 +47,7 @@
     "react-router": "^4.3.1",
     "react-test-renderer": "^16.8.6",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
@@ -54,5 +55,7 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }
