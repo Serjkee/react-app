@@ -1,6 +1,4 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {changingSearchInputValue} from '../../../actions/actionCreators'
 
 import './SearchInput.scss'
 
@@ -12,16 +10,9 @@ const SearchInput = (props) => {
 
   return (
     <div>
-      <input className={inputClass} placeholder={props.placeholder} value={props.searchValue} onChange={props.changingInputValue} />
+      <input className={inputClass} placeholder={props.placeholder} value={props.searchValue} onChange={props.onCustomChange} />
     </div>
   )
 }
 
-const mapStateToProps = (state) => ({searchValue: state.searchValue})
-const mapDispatchToProps = (dispatch) => ({
-  changingInputValue(e) {
-    dispatch(changingSearchInputValue(e.target.value))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchInput)
+export default SearchInput

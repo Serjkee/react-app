@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {changingSearchInputValue, asyncHandlingSubmitFormAction} from '../../actions/actionCreators'
 
 import SearchInput from './SearchInput/SearchInput'
 import SearchButton from './SearchButton/SearchButton'
@@ -17,14 +19,24 @@ export class Search extends Component {
   render() {
     return (
       <form onSubmit={this.submitForm.bind(this)}>
-        <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' />
+        <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' onCustomChange={this.props.changingInputValue} />
         <div className='header-filters' >
           <SearchFilters />
-          <SearchButton buttonText='Search' buttonClass='filter' />
+          <SearchButton buttonText='Search' buttonClass='filter' onCustomSubmit={this.props.onSubmitForm} />
         </div>
       </form>
     )
   }
 }
 
-export default Search
+const mapStateToProps = (state) => ({searchValue: state.searchValue})
+const mapDispatchToProps = (dispatch) => ({
+  changingInputValue(e) {
+    dispatch(changingSearchInputValue(e.target.value))
+  },
+  onSubmitForm() {
+    dispatch(asyncHandlingSubmitFormAction());
+  }
+})
+
+export default  connect(mapStateToProps, mapDispatchToProps)(Search)
