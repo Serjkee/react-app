@@ -19,7 +19,7 @@ export class Search extends Component {
   render() {
     return (
       <form onSubmit={this.submitForm.bind(this)}>
-        <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' onCustomChange={this.props.changingInputValue} />
+        <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' passingValue={this.props.searchValue} onCustomChange={this.props.changingInputValue} />
         <div className='header-filters' >
           <SearchFilters />
           <SearchButton buttonText='Search' buttonClass='filter' onCustomSubmit={this.props.onSubmitForm} />
@@ -29,7 +29,7 @@ export class Search extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({searchValue: state.searchValue})
+const mapStateToProps = (state) => ({searchValue: state.search.searchValue})
 const mapDispatchToProps = (dispatch) => ({
   changingInputValue(e) {
     dispatch(changingSearchInputValue(e.target.value))
