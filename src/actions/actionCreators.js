@@ -26,8 +26,8 @@ export const submitSearchForm = (data) => {
     payload: data
   }
 }
-export const asyncHandlingSubmitFormAction = (searchText, searchBy) => {
-  let url = `http://react-cdp-api.herokuapp.com/movies?search=${searchText}&searchBy=${searchBy}&limit=20`;
+export const asyncHandlingSubmitFormAction = (searchText, searchBy, sortBy) => {
+  let url = `http://react-cdp-api.herokuapp.com/movies?search=${searchText}&searchBy=${searchBy}&sortBy=${sortBy}&sortOrder=desc&limit=20`;
   console.log(url)
   return (dispatch) => {
     axios

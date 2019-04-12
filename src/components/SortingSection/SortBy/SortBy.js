@@ -11,8 +11,8 @@ const SortBy = (props) => {
       <p>
         Sort by
       </p>
-      <Filter inputId='release' onCustomChange={props.changingSortBy} inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='release' inputText='release date' checkedByDefault />
-      <Filter inputId='rating' onCustomChange={props.changingSortBy} inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='rating' inputText='rating' />
+      <Filter inputId='release' onCustomChange={props.changingSortBy} inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='release_date' inputText='release date' checkedByDefault />
+      <Filter inputId='rating' onCustomChange={props.changingSortBy} inputClass='secondary-filter' inputName='sort' inputType='radio' inputValue='vote_average' inputText='rating' />
     </div>
   )
 }

@@ -7,7 +7,7 @@ import {
 const initialState = {
   searchValue: '',
   searchBy: 'title',
-  sortBy: 'release',
+  sortBy: 'release_date',
   apiData: []
 };
  
@@ -26,9 +26,9 @@ const handlingFormSubmit = (state, action) => {
 const handlingSortChanges = (state, action) => {
   let copiedApiDataObj = state.apiData.slice();
   let sortedContent = copiedApiDataObj.sort((item1, item2) => {
-    if (action.payload === 'release') {
+    if (action.payload === 'release_date') {
       return item2.release_date.slice(0, 4) - item1.release_date.slice(0, 4);
-    } else if (action.payload === 'rating') {
+    } else if (action.payload === 'vote_average') {
       return item2.vote_average - item1.vote_average;
     }
   })

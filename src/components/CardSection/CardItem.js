@@ -10,7 +10,7 @@ const CardItem = (props) => {
       </div>
       <div className='card-description'>
         <div className='card-film-name' >
-          <p class='card-film-title'>{props.movieName}</p>
+          <p className='card-film-title'>{props.movieName}</p>
           <span className='card-vote'>{props.movieVote}</span>
           <span className='card-year'>{props.movieAge}</span>
         </div>
