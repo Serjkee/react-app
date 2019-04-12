@@ -4,7 +4,7 @@ import './CardItem.scss'
 
 const CardItem = (props) => {
   return (
-    <div className='card'>
+    <div className='card' onClick={() => props.onCustomClick(props.movieId)}>
       <div className='card-image'>
         <img src={props.imgSrc} />
       </div>

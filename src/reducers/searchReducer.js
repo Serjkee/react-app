@@ -2,13 +2,16 @@ import {
   CHANGING_SEARCH_INPUT_VALUE, 
   CHANGING_SEARCH_BY_VALUE,
   SUBMIT_SEARCH_FORM,
-  CHANGING_SORT_VALUE } from '../actions/actionTypes'
+  CHANGING_SORT_VALUE,
+  SHOWING_ONE_CARD_CONTENT } from '../actions/actionTypes'
 
 const initialState = {
   searchValue: '',
   searchBy: 'title',
   sortBy: 'release_date',
-  apiData: []
+  apiData: [],
+  oneCardShowed: false,
+  oneCardData: []
 };
  
 const handilngSearchInputChange = ( state, action ) => {
@@ -32,8 +35,12 @@ const handlingSortChanges = (state, action) => {
       return item2.vote_average - item1.vote_average;
     }
   })
-  console.log(sortedContent)
   return Object.assign({}, state, {sortBy: action.payload, apiData: sortedContent})
+}
+
+const handlingVisibilityOneCardContent = (state, action) => {
+  let oneCardContent = state.apiData.slice().filter(card => card.id === action.payload);
+  return Object.assign({}, state, {oneCardShowed: true, oneCardData: oneCardContent})
 }
 
 const searchReducer = (state = initialState, action) => {
@@ -46,6 +53,8 @@ const searchReducer = (state = initialState, action) => {
       return handlingFormSubmit(state, action);
     case CHANGING_SORT_VALUE:
       return handlingSortChanges(state, action);
+    case SHOWING_ONE_CARD_CONTENT:
+      return handlingVisibilityOneCardContent(state, action);
     default:
       return state;
   }

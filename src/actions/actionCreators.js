@@ -4,7 +4,8 @@ import {
   CHANGING_SEARCH_INPUT_VALUE, 
   CHANGING_SEARCH_BY_VALUE, 
   SUBMIT_SEARCH_FORM,
-  CHANGING_SORT_VALUE } from './actionTypes'
+  CHANGING_SORT_VALUE,
+  SHOWING_ONE_CARD_CONTENT } from './actionTypes'
 
 export const changingSearchInputValue = (inputValue) => {
   return {
@@ -41,5 +42,12 @@ export const changingSortValue = (sortValue) => {
   return {
     type: CHANGING_SORT_VALUE,
     payload: sortValue
+  }
+}
+
+export const showingOneCardContent = (oneCardContent) => {
+  return {
+    type: SHOWING_ONE_CARD_CONTENT,
+    payload: oneCardContent
   }
 }

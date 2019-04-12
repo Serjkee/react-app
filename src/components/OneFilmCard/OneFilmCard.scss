@@ -6,6 +6,7 @@
 
   .film-card-image {
     width: 100%;
+    max-width: 220px;
 
     img {
       width: 100%;
@@ -25,7 +26,7 @@
       font-size: 36px;
     }
 
-    .film-card-awards {
+    .film-card-genres {
       margin-bottom: 20px;
       color: #ccc;
     }
