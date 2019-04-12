@@ -9,7 +9,11 @@ const CardItem = (props) => {
         <img src={props.imgSrc} />
       </div>
       <div className='card-description'>
-        <p className='card-film-name' >{props.movieName}<span className='card-year'>{props.movieAge}</span></p>
+        <div className='card-film-name' >
+          <p class='card-film-title'>{props.movieName}</p>
+          <span className='card-vote'>{props.movieVote}</span>
+          <span className='card-year'>{props.movieAge}</span>
+        </div>
         <p className='card-genre'>{props.movieGenre}</p>
       </div>
     </div>

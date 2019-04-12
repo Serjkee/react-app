@@ -28,7 +28,12 @@
   text-transform: uppercase;
   font-size: 20px;
 
-  .card-year {
+  .card-film-title {
+    flex-grow: 1;
+  }
+
+  .card-year,
+  .card-vote {
     margin-left: 10px;
     padding: 3px 5px;
     border: 1px solid #000;

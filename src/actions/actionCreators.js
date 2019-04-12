@@ -3,7 +3,8 @@ import axios from 'axios';
 import {
   CHANGING_SEARCH_INPUT_VALUE, 
   CHANGING_SEARCH_BY_VALUE, 
-  SUBMIT_SEARCH_FORM } from './actionTypes'
+  SUBMIT_SEARCH_FORM,
+  CHANGING_SORT_VALUE } from './actionTypes'
 
 export const changingSearchInputValue = (inputValue) => {
   return {
@@ -33,5 +34,12 @@ export const asyncHandlingSubmitFormAction = (searchText, searchBy) => {
     .get(url)
     .then(res => dispatch(submitSearchForm(res.data.data)))
     .catch(err => console.error(err))
+  }
+}
+
+export const changingSortValue = (sortValue) => {
+  return {
+    type: CHANGING_SORT_VALUE,
+    payload: sortValue
   }
 }
