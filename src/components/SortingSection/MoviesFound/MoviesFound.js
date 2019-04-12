@@ -2,10 +2,10 @@ import React from 'react'
 
 import './MoviesFound.scss'
 
-const MoviesFound = () => {
+const MoviesFound = (props) => {
   return (
     <p className='movies-found'>
-      N movies found
+      {props.moviesFound} movies found
     </p>
   )
 }

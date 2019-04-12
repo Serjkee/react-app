@@ -11,13 +11,11 @@ export class Card extends Component {
   }
 
   render() {
-    console.log(this.props.apiData)
+    let pageContent = this.props.apiData.map( content => <CardItem key={content.id} imgSrc={content.poster_path} movieName={content.title} movieAge={content.release_date.slice(0, 4)} movieGenre={content.genres.join(', ')}></CardItem>)
 
     return (
       <div className='card-wrapper'>
-        <CardItem imgSrc='src/assets/images/pulp.jpg' movieName='Pulp Fiction' movieAge='2004' movieGenre='Crime' />
-        <CardItem imgSrc='src/assets/images/pulp.jpg' movieName='Fun Fiction' movieAge='2014' movieGenre='Comedy' />
-        <CardItem imgSrc='src/assets/images/pulp.jpg' movieName='Crime Fiction' movieAge='2024' movieGenre='Drama' />
+        {pageContent}
       </div>
     )
   }

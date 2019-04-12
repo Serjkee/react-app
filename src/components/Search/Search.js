@@ -22,20 +22,20 @@ export class Search extends Component {
         <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' passingValue={this.props.searchValue} onCustomChange={this.props.changingInputValue} />
         <div className='header-filters' >
           <SearchFilters />
-          <SearchButton buttonText='Search' buttonClass='filter' onCustomSubmit={this.props.onSubmitForm} />
+          <SearchButton buttonText='Search' buttonClass='filter' onCustomSubmit={() => this.props.onSubmitForm(this.props.searchValue, this.props.searchBy)} />
         </div>
       </form>
     )
   }
 }
 
-const mapStateToProps = (state) => ({searchValue: state.search.searchValue})
+const mapStateToProps = (state) => ({searchValue: state.search.searchValue, searchBy: state.search.searchBy})
 const mapDispatchToProps = (dispatch) => ({
   changingInputValue(e) {
     dispatch(changingSearchInputValue(e.target.value))
   },
-  onSubmitForm() {
-    dispatch(asyncHandlingSubmitFormAction());
+  onSubmitForm(searchText, searchBy) {
+    dispatch(asyncHandlingSubmitFormAction(searchText, searchBy));
   }
 })
 

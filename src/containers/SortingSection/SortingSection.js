@@ -6,11 +6,15 @@ import FilmsByGenre from '../../components/SortingSection/FilmsByGenre/FilmsByGe
 import './SortingSection.scss'
 
 export class SortingSection extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
       <div className='sorting-section-wrapper'>
         <div className='sorting-section'>
-          <MoviesFound />
+          <MoviesFound moviesFound={this.props.moviesFound}/>
           <SortBy />
           {/* <FilmsByGenre /> */}
         </div>

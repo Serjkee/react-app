@@ -7,16 +7,21 @@ import SortingSection from './containers/SortingSection/SortingSection'
 import Cards from './containers/Cards/Cards'
 import Footer from './containers/Footer/Footer'
 import NoFilmsFound from './components/NoFilmsFound/NoFilmsFound'
+import { connect } from 'react-redux';
 
 export class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
+    let pageContent = this.props.apiData.length ?  <><SortingSection moviesFound={this.props.apiData.length}/> <Cards /></> : <NoFilmsFound />;
+
     return (
       <ErrorBoundary>
         <div className='app-wrapper'>
           <Header />
-          <SortingSection />
-          {/* <NoFilmsFound /> */}
-          <Cards />
+          {pageContent}
           <Footer />
         </div>
       </ErrorBoundary>
@@ -24,4 +29,6 @@ export class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({apiData: state.search.apiData});
+
+export default connect(mapStateToProps)(App)

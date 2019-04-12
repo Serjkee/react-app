@@ -13,7 +13,7 @@ const SearchFiltes = (props) => {
         Search by
       </p>
       <Filter inputId='title' inputClass='main-filter' onCustomChange={props.changingByValue} inputName='search' inputType='radio' inputValue='title' inputText='Title' checkedByDefault />
-      <Filter inputId='director' inputClass='main-filter' onCustomChange={props.changingByValue} inputName='search' inputType='radio' inputValue='director' inputText='Director' />
+      <Filter inputId='genres' inputClass='main-filter' onCustomChange={props.changingByValue} inputName='search' inputType='radio' inputValue='genres' inputText='Genres' />
     </div>
   )
 }
