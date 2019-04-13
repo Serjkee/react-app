@@ -1,28 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests SearchFilters component Matching snapshot 1`] = `
-<div
-  className="search-filters"
->
-  <p>
-    Search by
-  </p>
-  <Filter
-    checkedByDefault={true}
-    inputClass="main-filter"
-    inputId="title"
-    inputName="search"
-    inputText="Title"
-    inputType="radio"
-    inputValue="TITLE"
-  />
-  <Filter
-    inputClass="main-filter"
-    inputId="director"
-    inputName="search"
-    inputText="Director"
-    inputType="radio"
-    inputValue="DIRECTOR"
-  />
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

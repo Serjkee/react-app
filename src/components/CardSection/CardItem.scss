@@ -13,10 +13,12 @@
 }
 
 .card-image {
+  min-height: 540px;
+  margin-bottom: 10px;
+
   img {
     width: 100%;
     height: auto;
-    margin-bottom: 10px;
   }
 }
 
@@ -34,6 +36,7 @@
 
   .card-year,
   .card-vote {
+    align-self: flex-start;
     margin-left: 10px;
     padding: 3px 5px;
     border: 1px solid #000;

@@ -3,7 +3,8 @@ import {
   CHANGING_SEARCH_BY_VALUE,
   SUBMIT_SEARCH_FORM,
   CHANGING_SORT_VALUE,
-  SHOWING_ONE_CARD_CONTENT } from '../actions/actionTypes'
+  SHOWING_ONE_CARD_CONTENT,
+  SHOWING_SEARCH_FILTER_CONTENT } from '../actions/actionTypes'
 
 const initialState = {
   searchValue: '',
@@ -43,6 +44,10 @@ const handlingVisibilityOneCardContent = (state, action) => {
   return Object.assign({}, state, {oneCardShowed: true, oneCardData: oneCardContent})
 }
 
+const handlingSearchFilterVisibility = (state, action) => {
+  return Object.assign({}, state, {oneCardShowed: false})
+}
+
 const searchReducer = (state = initialState, action) => {
   switch(action.type) {
     case CHANGING_SEARCH_INPUT_VALUE:
@@ -55,6 +60,8 @@ const searchReducer = (state = initialState, action) => {
       return handlingSortChanges(state, action);
     case SHOWING_ONE_CARD_CONTENT:
       return handlingVisibilityOneCardContent(state, action);
+    case SHOWING_SEARCH_FILTER_CONTENT:
+      return handlingSearchFilterVisibility(state, action);
     default:
       return state;
   }

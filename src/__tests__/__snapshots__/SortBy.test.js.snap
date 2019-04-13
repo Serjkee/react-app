@@ -1,28 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests SortBy component Matching snapshot 1`] = `
-<div
-  className="sort-filters"
->
-  <p>
-    Sort by
-  </p>
-  <Filter
-    checkedByDefault={true}
-    inputClass="secondary-filter"
-    inputId="release"
-    inputName="sort"
-    inputText="release date"
-    inputType="radio"
-    inputValue="RELEASE"
-  />
-  <Filter
-    inputClass="secondary-filter"
-    inputId="rating"
-    inputName="sort"
-    inputText="rating"
-    inputType="radio"
-    inputValue="RATING"
-  />
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

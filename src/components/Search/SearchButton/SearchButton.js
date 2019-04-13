@@ -6,11 +6,13 @@ const SearchButton = (props) => {
   let buttonClass = '';
   if (props.buttonClass === 'filter') {
     buttonClass = 'search-button';
+  } else if (props.buttonClass === 'backToFilter') {
+    buttonClass = 'back-to-filter';
   }
 
   return (
     <div>
-      <button className={buttonClass} onClick={props.changingBtnText} onClick={props.onCustomSubmit} >{props.buttonText}</button>
+      <button className={buttonClass} onClick={props.onCustomSubmit} >{props.buttonText}</button>
     </div>
   )
 }

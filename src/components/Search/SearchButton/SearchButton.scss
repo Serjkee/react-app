@@ -1,6 +1,7 @@
 @import '../../../index.scss';
 
-.search-button {
+.search-button,
+.back-to-filter {
   width: 150px;
   text-align: center;
   text-transform: uppercase;
@@ -11,4 +12,9 @@
   padding: 6px 0;
   border-radius: 3px;
   cursor: pointer;
+}
+
+.back-to-filter {
+  background-color: #fff;
+  color: $mainTextColor;
 }

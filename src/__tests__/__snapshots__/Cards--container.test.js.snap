@@ -1,26 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests Cards container Matching snapshot 1`] = `
-<div
-  className="card-wrapper"
->
-  <CardItem
-    imgSrc="src/assets/images/pulp.jpg"
-    movieAge="2004"
-    movieGenre="Crime"
-    movieName="Pulp Fiction"
-  />
-  <CardItem
-    imgSrc="src/assets/images/pulp.jpg"
-    movieAge="2014"
-    movieGenre="Comedy"
-    movieName="Fun Fiction"
-  />
-  <CardItem
-    imgSrc="src/assets/images/pulp.jpg"
-    movieAge="2024"
-    movieGenre="Drama"
-    movieName="Crime Fiction"
-  />
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

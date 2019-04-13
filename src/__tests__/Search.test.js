@@ -7,11 +7,4 @@ describe('Tests Search component', () => {
 
     expect(component).toMatchSnapshot();
   })
-
-  it('Checking submit event', () => {
-    const component = mount(<Search />)
-
-    component.find('form').simulate('submit')
-    expect(component.state().clicked).toEqual('event fired')
-  })
 })

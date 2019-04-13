@@ -5,6 +5,8 @@ import FindYourMovie from '../../components/Header/FindYourMovie/FindYourMovie'
 import NetflixLogo from '../../components/NetflixLogo/NetflixLogo'
 import Search from '../../components/Search/Search'
 import OneCardFilm from '../../components/OneFilmCard/OneFilmCard'
+import SearchButton from '../../components/Search/SearchButton/SearchButton'
+import {showingSearchFilterContent} from '../../actions/actionCreators'
 import {connect} from 'react-redux'
 
 export class Header extends Component {
@@ -13,7 +15,7 @@ export class Header extends Component {
   }
 
   render() {
-    console.log(this.props.oneCardData)
+    let withButtonLogo = this.props.oneCardShowed ? <><NetflixLogo /><SearchButton onCustomSubmit={this.props.showSearchFilter} buttonClass='backToFilter' buttonText='Search' /></> : <NetflixLogo />;
     let oneCardHeaderContent = this.props.oneCardShowed ? 
     <OneCardFilm 
     cardImgPath={this.props.oneCardData.poster_path} 
@@ -26,7 +28,9 @@ export class Header extends Component {
     return (
       <div className='header-image'>
         <div className='header'>
-          <NetflixLogo />
+          <div className='logo-header'>
+            {withButtonLogo}
+          </div>
           {oneCardHeaderContent}
         </div>
       </div>
@@ -35,5 +39,10 @@ export class Header extends Component {
 }
 
 const mapStateToProps = (state) => ({oneCardShowed: state.search.oneCardShowed, oneCardData: state.search.oneCardData[0]})
+const mapDispatchToProps = (dispatch) => ({
+  showSearchFilter() {
+    dispatch(showingSearchFilterContent());
+  }
+})
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

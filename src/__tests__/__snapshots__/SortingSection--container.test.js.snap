@@ -8,7 +8,7 @@ exports[`Tests SortingSection container Matching snapshot 1`] = `
     className="sorting-section"
   >
     <MoviesFound />
-    <SortBy />
+    <Connect(SortBy) />
   </div>
 </div>
 `;
