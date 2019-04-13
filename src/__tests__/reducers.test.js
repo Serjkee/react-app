@@ -158,4 +158,26 @@ describe('testing reducer', () => {
       oneCardData: []
     })
   })
+
+  it('should handle DEFAULT_STATE', () => {
+    expect(
+      searchReducer({
+        searchValue: '',
+        searchBy: 'title',
+        sortBy: 'release_date',
+        apiData: [],
+        oneCardShowed: true,
+        oneCardData: []
+      }, {
+        type: 'DEFAULT_STATE'
+      })
+    ).toEqual({
+      searchValue: '',
+      searchBy: 'title',
+      sortBy: 'release_date',
+      apiData: [],
+      oneCardShowed: true,
+      oneCardData: []
+    })
+  })
 })
