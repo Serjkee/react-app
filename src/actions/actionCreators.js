@@ -4,7 +4,6 @@ import {
   CHANGING_SEARCH_INPUT_VALUE, 
   CHANGING_SEARCH_BY_VALUE, 
   SUBMIT_SEARCH_FORM,
-  CHANGING_SORT_VALUE,
   SHOWING_ONE_CARD_CONTENT,
   SHOWING_SEARCH_FILTER_CONTENT } from './actionTypes'
 
@@ -22,10 +21,10 @@ export const changingSearchByValue = (searchByValue) => {
   }
 }
 
-export const submitSearchForm = (data) => {
+export const submitSearchForm = (data, sortBy) => {
   return {
     type: SUBMIT_SEARCH_FORM,
-    payload: data
+    payload: {data: data, sort: sortBy},
   }
 }
 export const asyncHandlingSubmitFormAction = (searchText, searchBy, sortBy) => {
@@ -34,15 +33,8 @@ export const asyncHandlingSubmitFormAction = (searchText, searchBy, sortBy) => {
   return (dispatch) => {
     axios
     .get(url)
-    .then(res => dispatch(submitSearchForm(res.data.data)))
+    .then(res => dispatch(submitSearchForm(res.data.data, sortBy)))
     .catch(err => console.error(err))
-  }
-}
-
-export const changingSortValue = (sortValue) => {
-  return {
-    type: CHANGING_SORT_VALUE,
-    payload: sortValue
   }
 }
 
