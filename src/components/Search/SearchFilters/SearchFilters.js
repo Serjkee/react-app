@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {changingSearchByValue} from '../../../actions/actionCreators'
+import {changingSearchByValue} from '../../../redux/filters/filters.actions'
 
 import './SearchFilters.scss'
 import './Filter/Filter.scss'

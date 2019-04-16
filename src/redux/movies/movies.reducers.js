@@ -1,26 +1,13 @@
 import {
-  CHANGING_SEARCH_INPUT_VALUE, 
-  CHANGING_SEARCH_BY_VALUE,
   SUBMIT_SEARCH_FORM,
   SHOWING_ONE_CARD_CONTENT,
-  SHOWING_SEARCH_FILTER_CONTENT } from '../actions/actionTypes'
+  SHOWING_SEARCH_FILTER_CONTENT } from './movies.constants'
 
-const initialState = {
-  searchValue: '',
-  searchBy: 'title',
-  sortBy: 'release_date',
+const initState = {
   apiData: [],
   oneCardShowed: false,
   oneCardData: []
 };
- 
-const handilngSearchInputChange = ( state, action ) => {
-  return Object.assign({}, state, {searchValue: action.payload})
-}
-
-const handlingSearchByChange = (state, action) => {
-  return Object.assign({}, state, {searchBy: action.payload})
-}
 
 const handlingFormSubmit = (state, action) => {
   return Object.assign({}, state, {sortBy: action.payload.sort, apiData: [...action.payload.data]})
@@ -35,12 +22,8 @@ const handlingSearchFilterVisibility = (state, action) => {
   return Object.assign({}, state, {oneCardShowed: false})
 }
 
-const searchReducer = (state = initialState, action) => {
+const searchReducer = (state = initState, action) => {
   switch(action.type) {
-    case CHANGING_SEARCH_INPUT_VALUE:
-      return handilngSearchInputChange(state, action);
-    case CHANGING_SEARCH_BY_VALUE:
-      return handlingSearchByChange(state, action);
     case SUBMIT_SEARCH_FORM:
       return handlingFormSubmit(state, action);
     case SHOWING_ONE_CARD_CONTENT:

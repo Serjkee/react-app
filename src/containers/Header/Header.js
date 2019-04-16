@@ -6,7 +6,7 @@ import NetflixLogo from '../../components/NetflixLogo/NetflixLogo'
 import Search from '../../components/Search/Search'
 import OneCardFilm from '../../components/OneFilmCard/OneFilmCard'
 import SearchButton from '../../components/Search/SearchButton/SearchButton'
-import {showingSearchFilterContent} from '../../actions/actionCreators'
+import {showingSearchFilterContent} from '../../redux/movies/movies.actions'
 import {connect} from 'react-redux'
 
 export class Header extends Component {
@@ -38,7 +38,7 @@ export class Header extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({oneCardShowed: state.search.oneCardShowed, oneCardData: state.search.oneCardData[0]})
+const mapStateToProps = (state) => ({oneCardShowed: state.movies.oneCardShowed, oneCardData: state.movies.oneCardData[0]})
 const mapDispatchToProps = (dispatch) => ({
   showSearchFilter() {
     dispatch(showingSearchFilterContent());

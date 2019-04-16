@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import CardItem from '../../components/CardSection/CardItem'
 import './Cards.scss'
 import { connect } from 'react-redux';
-import {showingOneCardContent} from '../../actions/actionCreators'
+import {showingOneCardContent} from '../../redux/movies/movies.actions'
 
 export class Card extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export class Card extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({apiData: state.search.apiData})
+const mapStateToProps = (state) => ({apiData: state.movies.apiData})
 const mapDispatchToProps = (dispatch) => ({
   addingContentToOneCardComponent(e) {
     dispatch(showingOneCardContent(e))

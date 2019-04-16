@@ -10,7 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import './index.scss';
 import App from './App';
-import reducers from './reducers/rootReducer'
+import reducers from './redux/rootReducer'
 
 // Redux-persistor options
 const persistConfig = {
@@ -20,7 +20,6 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, reducers)
 let store = createStore(persistedReducer, applyMiddleware(thunk))
 let persistor = persistStore(store)
-
 
 ReactDOM.render(
   <Provider store={store}>

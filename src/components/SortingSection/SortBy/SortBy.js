@@ -3,7 +3,7 @@ import React from 'react'
 import './SortBy.scss'
 import Filter from '../../Search/SearchFilters/Filter/Filter'
 import { connect } from 'react-redux';
-import {asyncHandlingSubmitFormAction} from '../../../actions/actionCreators'
+import {asyncHandlingSubmitFormAction} from '../../../redux/movies/movies.actions'
 
 const SortBy = (props) => {
   return (
@@ -17,7 +17,7 @@ const SortBy = (props) => {
   )
 }
 
-const mapStateToProps = (state) => ({searchValue: state.search.searchValue, searchBy: state.search.searchBy, sortBy: state.search.sortBy})
+const mapStateToProps = (state) => ({searchValue: state.filters.searchValue, searchBy: state.filters.searchBy, sortBy: state.filters.sortBy})
 const mapDispatchToProps = (dispatch) => ({
   changingSortBy(searchText, searchBy, sortBy) {
     dispatch(asyncHandlingSubmitFormAction(searchText, searchBy, sortBy))

@@ -1,25 +1,9 @@
 import axios from 'axios';
 
 import {
-  CHANGING_SEARCH_INPUT_VALUE, 
-  CHANGING_SEARCH_BY_VALUE, 
   SUBMIT_SEARCH_FORM,
   SHOWING_ONE_CARD_CONTENT,
-  SHOWING_SEARCH_FILTER_CONTENT } from './actionTypes'
-
-export const changingSearchInputValue = (inputValue) => {
-  return {
-    type: CHANGING_SEARCH_INPUT_VALUE,
-    payload: inputValue
-  }
-}
-
-export const changingSearchByValue = (searchByValue) => {
-  return {
-    type: CHANGING_SEARCH_BY_VALUE,
-    payload: searchByValue
-  }
-}
+  SHOWING_SEARCH_FILTER_CONTENT } from './movies.constants'
 
 export const submitSearchForm = (data, sortBy) => {
   return {

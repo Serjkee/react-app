@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {changingSearchInputValue, asyncHandlingSubmitFormAction} from '../../actions/actionCreators'
+import {changingSearchInputValue} from '../../redux/filters/filters.actions'
+import {asyncHandlingSubmitFormAction} from '../../redux/movies/movies.actions'
 
 import SearchInput from './SearchInput/SearchInput'
 import SearchButton from './SearchButton/SearchButton'
@@ -29,7 +30,7 @@ export class Search extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({searchValue: state.search.searchValue, searchBy: state.search.searchBy, sortBy: state.search.sortBy})
+const mapStateToProps = (state) => ({searchValue: state.filters.searchValue, searchBy: state.filters.searchBy, sortBy: state.filters.sortBy})
 const mapDispatchToProps = (dispatch) => ({
   changingInputValue(e) {
     dispatch(changingSearchInputValue(e.target.value))
