@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 import ErrorBoundary from './utility/ErrorBoundary/ErrorBoundary'
 import './App.scss';
-import Header from './containers/Header/Header'
+import Header from './containers/Header/Header.hoc'
 import SortingSection from './containers/SortingSection/SortingSection'
-import Cards from './containers/Cards/Cards'
+import Cards from './containers/Cards/Cards.hoc'
 import Footer from './containers/Footer/Footer'
 import NoFilmsFound from './components/NoFilmsFound/NoFilmsFound'
 import { connect } from 'react-redux';

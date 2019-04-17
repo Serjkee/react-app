@@ -1,12 +1,10 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import {changingSearchByValue} from '../../../redux/filters/filters.actions'
 
 import './SearchFilters.scss'
 import './Filter/Filter.scss'
 import Filter from './Filter/Filter'
 
-const SearchFiltes = (props) => {
+const SearchFilters = (props) => {
   return (
     <div className='search-filters'>
       <p>
@@ -18,11 +16,4 @@ const SearchFiltes = (props) => {
   )
 }
 
-const mapStateToProps = (state) =>({searchValue: state.searchValue})
-const mapDispatchToProps = (dispatch) =>({
-  changingByValue(e) {
-    dispatch(changingSearchByValue(e.target.value))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SearchFiltes)
+export default SearchFilters

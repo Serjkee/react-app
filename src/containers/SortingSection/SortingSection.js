@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import MoviesFound from '../../components/SortingSection/MoviesFound/MoviesFound'
-import SortBy from '../../components/SortingSection/SortBy/SortBy';
+import SortBy from '../../components/SortingSection/SortBy/SortBy.hoc';
 import FilmsByGenre from '../../components/SortingSection/FilmsByGenre/FilmsByGenre'
 import './SortingSection.scss'
 

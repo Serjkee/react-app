@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 
 import CardItem from '../../components/CardSection/CardItem'
 import './Cards.scss'
-import { connect } from 'react-redux';
-import {showingOneCardContent} from '../../redux/movies/movies.actions'
 
-export class Card extends Component {
+export class Cards extends Component {
   constructor(props) {
     super(props)
   }
@@ -28,11 +26,4 @@ export class Card extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({apiData: state.movies.apiData})
-const mapDispatchToProps = (dispatch) => ({
-  addingContentToOneCardComponent(e) {
-    dispatch(showingOneCardContent(e))
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Card)
+export default Cards

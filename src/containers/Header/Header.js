@@ -3,11 +3,9 @@ import React, { Component } from 'react'
 import './Header.scss'
 import FindYourMovie from '../../components/Header/FindYourMovie/FindYourMovie'
 import NetflixLogo from '../../components/NetflixLogo/NetflixLogo'
-import Search from '../../components/Search/Search'
+import Search from '../../components/Search/Search.hoc'
 import OneCardFilm from '../../components/OneFilmCard/OneFilmCard'
 import SearchButton from '../../components/Search/SearchButton/SearchButton'
-import {showingSearchFilterContent} from '../../redux/movies/movies.actions'
-import {connect} from 'react-redux'
 
 export class Header extends Component {
   constructor(props) {
@@ -38,11 +36,4 @@ export class Header extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({oneCardShowed: state.movies.oneCardShowed, oneCardData: state.movies.oneCardData[0]})
-const mapDispatchToProps = (dispatch) => ({
-  showSearchFilter() {
-    dispatch(showingSearchFilterContent());
-  }
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default Header
