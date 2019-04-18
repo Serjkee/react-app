@@ -32,5 +32,3 @@ export class App extends Component {
 const mapStateToProps = (state) => ({apiData: state.movies.apiData});
 
 export default connect(mapStateToProps)(App)
-
-// trying commit revert
