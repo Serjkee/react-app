@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Route, Link } from 'react-router-dom'
+
 
 import './Header.scss'
 import FindYourMovie from '../../components/Header/FindYourMovie/FindYourMovie'
@@ -13,24 +15,35 @@ export class Header extends Component {
   }
 
   render() {
-    let withButtonLogo = this.props.oneCardShowed ? <><NetflixLogo /><SearchButton onCustomSubmit={this.props.showSearchFilter} buttonClass='backToFilter' buttonText='Search' /></> : <NetflixLogo />;
-    let oneCardHeaderContent = this.props.oneCardShowed ? 
-    <OneCardFilm 
+    let withButtonLogo = <><NetflixLogo /><SearchButton onCustomSubmit={this.props.showSearchFilter} buttonClass='backToFilter' ><Link to='/' >Search</Link></ SearchButton></>;
+    let oneCardHeaderContent = <OneCardFilm 
     cardImgPath={this.props.oneCardData.poster_path} 
     cardTitle={this.props.oneCardData.title}
     cardGenres={this.props.oneCardData.genres.join(', ')}
     cardReleaseDate={this.props.oneCardData.release_date.slice(0, 4)}
     cardRuntime={this.props.oneCardData.runtime}
-    cardFilmOverview={this.props.oneCardData.overview} /> : <><FindYourMovie /><Search /></>
+    cardFilmOverview={this.props.oneCardData.overview} /> 
+
+    let withoutMovie = () => (<div className='header'>
+      <div className='logo-header'>
+        <NetflixLogo />
+      </div>
+        <><FindYourMovie /><Search /></>
+      </div>)
+
+    let withMovie = () => (<div className='header'>
+      <div className='logo-header'>
+        {withButtonLogo}
+      </div>
+      {oneCardHeaderContent}
+      </div>)
+
+    console.log(this.props)
 
     return (
       <div className='header-image'>
-        <div className='header'>
-          <div className='logo-header'>
-            {withButtonLogo}
-          </div>
-          {oneCardHeaderContent}
-        </div>
+        <Route exact path={['/', '/movies']} component={withoutMovie} />
+        <Route path='/movies/:id' component={withMovie} />
       </div>
     )
   }

@@ -12,7 +12,7 @@ const SearchButton = (props) => {
 
   return (
     <div>
-      <button className={buttonClass} onClick={props.onCustomSubmit} >{props.buttonText}</button>
+      <button className={buttonClass} onClick={props.onCustomSubmit} >{props.children}</button>
     </div>
   )
 }
