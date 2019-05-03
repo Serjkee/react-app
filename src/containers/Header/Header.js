@@ -24,21 +24,35 @@ export class Header extends Component {
     cardRuntime={this.props.oneCardData.runtime}
     cardFilmOverview={this.props.oneCardData.overview} /> 
 
-    let withoutMovie = () => (<div className='header'>
+    let withoutMovie = (props) => {
+      return (<div className='header'>
       <div className='logo-header'>
         <NetflixLogo />
       </div>
         <><FindYourMovie /><Search /></>
       </div>)
+    }
 
-    let withMovie = () => (<div className='header'>
+    let withMovie = (props) => {
+      let oneCardData = this.props.apiData.filter(arrData => Number(props.match.params.id) === arrData.id )[0];
+      let oneCardHeaderContent = <OneCardFilm 
+        cardImgPath={oneCardData.poster_path} 
+        cardTitle={oneCardData.title}
+        cardGenres={oneCardData.genres.join(', ')}
+        cardReleaseDate={oneCardData.release_date.slice(0, 4)}
+        cardRuntime={oneCardData.runtime}
+        cardFilmOverview={oneCardData.overview} /> 
+
+      console.log(oneCardData, oneCardHeaderContent)
+      console.log(this.props, props)
+
+      return (<div className='header'>
       <div className='logo-header'>
         {withButtonLogo}
       </div>
       {oneCardHeaderContent}
       </div>)
-
-    console.log(this.props)
+    }
 
     return (
       <div className='header-image'>
