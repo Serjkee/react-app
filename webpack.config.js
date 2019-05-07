@@ -29,7 +29,8 @@ module.exports = (env) => {
     entry: './src/index.js',
     output: {
       filename: 'bundle.js',
-      path: path.resolve(__dirname, 'dist')
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/'
     },
     devtool: env.mode === 'production' ? 'none' : 'cheap-eval-source-map',
     optimization: {
@@ -68,6 +69,9 @@ module.exports = (env) => {
          ]
        }
       ]
+    },
+    devServer: {
+      historyApiFallback: true,
     },
     plugins: [
       new CleanWebpackPlugin(),

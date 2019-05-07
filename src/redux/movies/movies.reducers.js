@@ -10,6 +10,7 @@ const initState = {
 };
 
 const handlingFormSubmit = (state, action) => {
+  console.log(action)
   return Object.assign({}, state, {sortBy: action.payload.sort, apiData: [...action.payload.data]})
 }
 

@@ -16,13 +16,6 @@ export class Header extends Component {
 
   render() {
     let withButtonLogo = <><NetflixLogo /><SearchButton onCustomSubmit={this.props.showSearchFilter} buttonClass='backToFilter' ><Link to='/' >Search</Link></ SearchButton></>;
-    let oneCardHeaderContent = <OneCardFilm 
-    cardImgPath={this.props.oneCardData.poster_path} 
-    cardTitle={this.props.oneCardData.title}
-    cardGenres={this.props.oneCardData.genres.join(', ')}
-    cardReleaseDate={this.props.oneCardData.release_date.slice(0, 4)}
-    cardRuntime={this.props.oneCardData.runtime}
-    cardFilmOverview={this.props.oneCardData.overview} /> 
 
     let withoutMovie = (props) => {
       return (<div className='header'>
@@ -42,9 +35,6 @@ export class Header extends Component {
         cardReleaseDate={oneCardData.release_date.slice(0, 4)}
         cardRuntime={oneCardData.runtime}
         cardFilmOverview={oneCardData.overview} /> 
-
-      console.log(oneCardData, oneCardHeaderContent)
-      console.log(this.props, props)
 
       return (<div className='header'>
       <div className='logo-header'>
