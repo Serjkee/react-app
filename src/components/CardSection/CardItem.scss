@@ -6,10 +6,6 @@
   &:nth-child(3n) {
     margin-right: 0;
   }
-
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .card-image {
@@ -32,6 +28,11 @@
 
   .card-film-title {
     flex-grow: 1;
+
+    > a {
+      color: initial;
+      text-decoration: none;
+    }
   }
 
   .card-year,

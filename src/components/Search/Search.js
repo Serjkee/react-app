@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 
 import SearchInput from './SearchInput/SearchInput'
 import SearchButton from './SearchButton/SearchButton'
@@ -20,7 +22,7 @@ export class Search extends Component {
         <SearchInput placeholder='Example: Quentin Tarantino' inputClass='search' passingValue={this.props.searchValue} onCustomChange={this.props.changingInputValue} />
         <div className='header-filters' >
           <SearchFilters />
-          <SearchButton buttonText='Search' buttonClass='filter' onCustomSubmit={() => this.props.onSubmitForm(this.props.searchValue, this.props.searchBy, this.props.sortBy)} />
+          <SearchButton buttonClass='filter' onCustomSubmit={() => this.props.onSubmitForm(this.props.searchValue, this.props.searchBy, this.props.sortBy)} ><Link to='#'>Search</Link></SearchButton>
         </div>
       </form>
     )

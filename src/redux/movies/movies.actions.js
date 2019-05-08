@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 import {
-  SUBMIT_SEARCH_FORM,
-  SHOWING_ONE_CARD_CONTENT,
-  SHOWING_SEARCH_FILTER_CONTENT } from './movies.constants'
+  SUBMIT_SEARCH_FORM } from './movies.constants'
 
 export const submitSearchForm = (data, sortBy) => {
   return {
@@ -19,18 +17,5 @@ export const asyncHandlingSubmitFormAction = (searchText, searchBy, sortBy) => {
     .get(url)
     .then(res => dispatch(submitSearchForm(res.data.data, sortBy)))
     .catch(err => console.error(err))
-  }
-}
-
-export const showingOneCardContent = (oneCardContent) => {
-  return {
-    type: SHOWING_ONE_CARD_CONTENT,
-    payload: oneCardContent
-  }
-}
-
-export const showingSearchFilterContent = () => {
-  return {
-    type: SHOWING_SEARCH_FILTER_CONTENT
   }
 }
