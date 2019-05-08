@@ -17,13 +17,13 @@ export class Header extends Component {
   render() {
     let header, headerContent;
 
-    if( this.props.location.pathname === '/' ) {
+    if( this.props.location.pathname === '/' || this.props.location.pathname === '/movies') {
       header = <NetflixLogo />;
       headerContent = <><FindYourMovie /><Search /></>;
     } else if ( this.props.match.params.id ) {
       let cardToShow = this.props.apiData.filter( card => card.id === Number(this.props.match.params.id))[0];
 
-      header = <><NetflixLogo /><SearchButton buttonClass='backToFilter' ><Link to='/'>Search</Link></SearchButton></>;
+      header = <><NetflixLogo /><SearchButton buttonClass='backToFilter' ><Link to={{pathname: `/movies`, search: `?search=${this.props.searchValue}&searchBy=${this.props.searchBy}&sortBy=${this.props.sortBy}&sortOrder=desc&limit=20`}}>Search</Link></SearchButton></>;
       headerContent = <OneCardFilm 
         cardImgPath={cardToShow.poster_path} 
         cardTitle={cardToShow.title}

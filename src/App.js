@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom'
+import queryString from 'query-string'
 
 
 import ErrorBoundary from './utility/ErrorBoundary/ErrorBoundary'
@@ -12,10 +13,19 @@ import NoFilmsFound from './components/NoFilmsFound/NoFilmsFound'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import { connect } from 'react-redux';
 
+import {asyncHandlingSubmitFormAction} from './redux/movies/movies.actions'
+
 export class App extends Component {
   constructor(props) {
     super(props)
   }
+
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search)
+    const {search, searchBy, sortBy} = values
+    this.props.showApiData(search, searchBy, sortBy);
+  }
+  
 
   render() {
     let MainPage = () => <><Header /><><SortingSection moviesFound={this.props.apiData.length}/><Cards /></><Footer /></>;
@@ -28,8 +38,8 @@ export class App extends Component {
           <Switch>
             <Route exact path='/' component={MainPage} />
             <Route path="/movies/:id" component={Movies} />
+            <Route path="/movies" component={Movies} />
             <Route component={PageNotFound} />
-            {/* <Route path="/movies/:id" component={SingleMovies} /> */}
           </Switch>
         </div>
       </ErrorBoundary>
@@ -38,5 +48,10 @@ export class App extends Component {
 }
 
 const mapStateToProps = (state) => ({apiData: state.movies.apiData});
+const mapDispatchToProps = (dispatch) => ({
+  showApiData(searchText, searchBy, sortBy) {
+    dispatch(asyncHandlingSubmitFormAction(searchText, searchBy, sortBy));
+  }
+})
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
