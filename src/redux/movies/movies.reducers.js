@@ -6,7 +6,7 @@ const initState = {
 };
 
 const handlingFormSubmit = (state, action) => {
-  return Object.assign({}, state, {sortBy: action.payload.sort, apiData: [...action.payload.data]})
+  return Object.assign({}, state, {apiData: [...action.payload.data]})
 }
 
 const searchReducer = (state = initState, action) => {

@@ -2,6 +2,9 @@
 
 .netflix-logo {
   margin: 20px 0;
-  color: $mainTextColor;
-  cursor: default;
+
+  > a {
+    text-decoration: none;
+    color: $mainTextColor;
+  }
 }
