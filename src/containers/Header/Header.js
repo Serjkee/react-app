@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 
 import './Header.scss'
@@ -15,42 +15,35 @@ export class Header extends Component {
   }
 
   render() {
-    let withButtonLogo = <><NetflixLogo /><SearchButton onCustomSubmit={this.props.showSearchFilter} buttonClass='backToFilter' ><Link to='/' >Search</Link></ SearchButton></>;
+    let header, headerContent;
 
-    let withoutMovie = (props) => {
-      return (<div className='header'>
-      <div className='logo-header'>
-        <NetflixLogo />
-      </div>
-        <><FindYourMovie /><Search /></>
-      </div>)
-    }
+    if( this.props.location.pathname === '/' || this.props.location.pathname === '/movies') {
+      header = <NetflixLogo />;
+      headerContent = <><FindYourMovie /><Search /></>;
+    } else if ( this.props.match.params.id ) {
+      let cardToShow = this.props.apiData.filter( card => card.id === Number(this.props.match.params.id))[0];
 
-    let withMovie = (props) => {
-      let oneCardData = this.props.apiData.filter(arrData => Number(props.match.params.id) === arrData.id )[0];
-      let oneCardHeaderContent = <OneCardFilm 
-        cardImgPath={oneCardData.poster_path} 
-        cardTitle={oneCardData.title}
-        cardGenres={oneCardData.genres.join(', ')}
-        cardReleaseDate={oneCardData.release_date.slice(0, 4)}
-        cardRuntime={oneCardData.runtime}
-        cardFilmOverview={oneCardData.overview} /> 
-
-      return (<div className='header'>
-      <div className='logo-header'>
-        {withButtonLogo}
-      </div>
-      {oneCardHeaderContent}
-      </div>)
+      header = <><NetflixLogo /><SearchButton buttonClass='backToFilter' ><Link to={{pathname: `/movies`, search: `?search=${this.props.searchValue}&searchBy=${this.props.searchBy}&sortBy=${this.props.sortBy}&sortOrder=desc&limit=20`}}>Search</Link></SearchButton></>;
+      headerContent = <OneCardFilm 
+        cardImgPath={cardToShow.poster_path} 
+        cardTitle={cardToShow.title}
+        cardGenres={cardToShow.genres.join(', ')}
+        cardReleaseDate={cardToShow.release_date.slice(0, 4)}
+        cardRuntime={cardToShow.runtime}
+        cardFilmOverview={cardToShow.overview} />
     }
 
     return (
       <div className='header-image'>
-        <Route exact path={['/', '/movies']} component={withoutMovie} />
-        <Route path='/movies/:id' component={withMovie} />
+        <div className='header'>
+          <div className='logo-header'>
+            {header}
+          </div>
+          {headerContent}
+        </div>
       </div>
     )
   }
 }
 
-export default Header
+export default withRouter(Header)

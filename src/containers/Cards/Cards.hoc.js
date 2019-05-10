@@ -1,12 +1,37 @@
 import { connect } from 'react-redux';
-import {showingOneCardContent} from '../../redux/movies/movies.actions'
+import { withRouter } from 'react-router-dom'
+import queryString  from 'query-string'
+import React, { Component } from 'react'
+
 import Cards from './Cards'
+import NoFilmsFound from '../../components/NoFilmsFound/NoFilmsFound'
+
+import {asyncHandlingSubmitFormAction} from '../../redux/movies/movies.actions'
+
+class CardsHOC extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    const values = queryString.parse(this.props.location.search)
+    if (values.limit) {
+      const {search, searchBy, sortBy} = values
+      this.props.showApiData(search, searchBy, sortBy);
+    }
+  }
+
+  render() {
+    return this.props.apiData.length === 0 ? <NoFilmsFound /> : <Cards {...this.props}/>
+  }
+}
+
 
 const mapStateToProps = (state) => ({apiData: state.movies.apiData})
 const mapDispatchToProps = (dispatch) => ({
-  addingContentToOneCardComponent(e) {
-    dispatch(showingOneCardContent(e))
+  showApiData(searchText, searchBy, sortBy) {
+    dispatch(asyncHandlingSubmitFormAction(searchText, searchBy, sortBy));
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cards)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CardsHOC))

@@ -1,12 +1,6 @@
-import {showingSearchFilterContent} from '../../redux/movies/movies.actions'
 import {connect} from 'react-redux'
 import Header from './Header'
 
-const mapStateToProps = (state) => ({apiData: state.movies.apiData, oneCardShowed: state.movies.oneCardShowed, oneCardData: state.movies.oneCardData[0]})
-const mapDispatchToProps = (dispatch) => ({
-  showSearchFilter() {
-    dispatch(showingSearchFilterContent());
-  }
-})
+const mapStateToProps = (state) => ({apiData: state.movies.apiData, sortBy: state.filters.sortBy, searchValue: state.filters.searchValue, searchBy: state.filters.searchBy})
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps)(Header)

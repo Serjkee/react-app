@@ -5,13 +5,13 @@ import './CardItem.scss'
 
 const CardItem = (props) => {
   return (
-    <div className='card' onClick={() => props.onCustomClick(props.movieId)}>
+    <div className='card'>
       <div className='card-image'>
-        <Link to={`/movies/${props.movieId}`} ><img src={props.imgSrc} /></Link>
+        <Link to={`/movies/${props.movieId}`}><img src={props.imgSrc} /></Link>
       </div>
       <div className='card-description'>
         <div className='card-film-name' >
-        <p className='card-film-title'><Link to={`/movies/${props.movieId}`} >{props.movieName}</Link></p>
+          <p className='card-film-title'><Link to={`/movies/${props.movieId}`}>{props.movieName}</Link></p>
           <span className='card-vote'>{props.movieVote}</span>
           <span className='card-year'>{props.movieAge}</span>
         </div>

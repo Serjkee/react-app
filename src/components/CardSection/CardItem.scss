@@ -28,6 +28,11 @@
 
   .card-film-title {
     flex-grow: 1;
+
+    > a {
+      color: initial;
+      text-decoration: none;
+    }
   }
 
   .card-year,
