@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 
 import { createStore, applyMiddleware } from 'redux'
@@ -9,7 +9,6 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import { PersistGate } from 'redux-persist/integration/react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 import './index.scss';

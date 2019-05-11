@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = (env) => {
   const envKeys = Object.keys(env).reduce((prev, next) => {
@@ -34,7 +35,12 @@ module.exports = (env) => {
     },
     devtool: env.mode === 'production' ? 'none' : 'cheap-eval-source-map',
     optimization: {
-      minimizer: env.mode === 'production' ? [jsUglifyProduction] : [],
+      minimizer: env.mode === 'production' ? [new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          ecma: 6,
+        },
+      }),] : [],
     },
     module: {
       rules: [
