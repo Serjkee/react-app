@@ -1,0 +1,1 @@
+export const SUBMIT_SEARCH_FORM = 'SUBMIT_SEARCH_FORM';

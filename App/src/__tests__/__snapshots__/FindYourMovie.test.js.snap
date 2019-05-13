@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests FindYourMovie component Matching snapshot 1`] = `
+<p
+  className="find-your-movie"
+>
+  Find your movie
+</p>
+`;
