@@ -1,3 +1,4 @@
+// @flow
 import {
   CHANGING_SEARCH_TEXT_VALUE, 
   CHANGING_SEARCH_BY_VALUE,
@@ -22,7 +23,7 @@ const handlingSearchByChange = (state, action) => {
   return Object.assign({}, state, {searchBy: action.payload})
 }
 
-const filterReducer = (state = initState, action) => {
+const filterReducer = (state: Object = initState, action: Object): Object => {
   switch (action.type) {
     case CHANGING_SEARCH_TEXT_VALUE:
       return handilngSearchInputChange(state, action);
