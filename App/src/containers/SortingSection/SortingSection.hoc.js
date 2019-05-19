@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
-import SortingSection from './SortingSection'
-
 import React, { Component } from 'react'
+import {SortingSection} from './SortingSection'
+
 
 class SortingSectionHOC extends Component {
   constructor(props) {

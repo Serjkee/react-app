@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import queryString  from 'query-string'
 import React, { Component } from 'react'
 
-import Cards from './Cards'
+import {Cards} from './Cards'
 import NoFilmsFound from '../../components/NoFilmsFound/NoFilmsFound'
 
 import {asyncHandlingSubmitFormAction} from '../../redux/movies/movies.actions'

@@ -1,9 +1,9 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import App from './App';
 import { StaticRouter } from 'react-router-dom';
-import {store} from './client'
 import {Provider} from 'react-redux'
+import {App} from './App';
+import {store} from './client'
 
 function renderHTML(html) {
   return `

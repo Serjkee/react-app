@@ -10,7 +10,11 @@ const SearchInput = (props) => {
 
   return (
     <div>
-      <input className={inputClass} placeholder={props.placeholder} value={props.searchValue} onChange={props.onCustomChange} />
+      <input 
+        className={inputClass} 
+        placeholder={props.placeholder} 
+        value={props.searchValue} 
+        onChange={props.onCustomChange} />
     </div>
   )
 }

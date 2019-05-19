@@ -12,7 +12,7 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 
 import './index.scss';
-import App from './App';
+import {App} from './App';
 import reducers from './redux/rootReducer'
 
 // Redux-persistor options
@@ -21,8 +21,8 @@ const persistConfig = {
   storage,
 }
 const persistedReducer = persistReducer(persistConfig, reducers)
-export let store = createStore(persistedReducer, applyMiddleware(thunk))
-export let persistor = persistStore(store)
+export const store = createStore(persistedReducer, applyMiddleware(thunk))
+export const persistor = persistStore(store)
 
 if (typeof window !== 'undefined') {
   ReactDOM.render(<Provider store={store}>
@@ -31,5 +31,7 @@ if (typeof window !== 'undefined') {
         <App />
       </Router>
     </PersistGate>
-  </Provider>, document.getElementById("root"));
+  </Provider>, 
+  // eslint-disable-next-line no-undef
+  document.getElementById("root"));
 }
