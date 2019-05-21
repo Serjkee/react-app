@@ -1,27 +1,32 @@
 import React from 'react';
+import './addons';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import { Button, Welcome } from '@storybook/react/demo';
+import Button from '../src/components/Search/SearchButton/SearchButton'
 import Filter from '../src/components/Search/SearchFilters/Filter/Filter'
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
 storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+  .add('Search button', () => <Button buttonClass='filter' onCustomSubmit={action('clicked')}>New one</Button> )
+  .add('Filter button', () => <Button buttonClass='backToFilter' onCustomSubmit={action('clicked')}>New one</Button> );
 
-  storiesOf('Filter', module).add('Filter', () => <Filter 
-    inputId='some id' 
-    inputClass='secondary-filter' 
-    onCustomChange={action('clicked')} 
-    inputName='text' value=''  
-    inputText='Hey' />)
+storiesOf('Input', module)
+  .add('Input radio checked', () => <Filter 
+  inputId='title' 
+  inputClass='main-filter' 
+  onCustomChange={action('clicked')} 
+  inputName='search' 
+  inputType='radio' 
+  inputValue='title' 
+  inputText='Title' 
+  checkedOption={true} />)
+  .add('Input radio unchecked', () => <Filter 
+  inputId='title' 
+  inputClass='main-filter' 
+  onCustomChange={action('clicked')} 
+  inputName='search' 
+  inputType='radio' 
+  inputValue='title' 
+  inputText='Title' 
+  checkedOption={false} />)
