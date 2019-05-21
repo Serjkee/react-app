@@ -1,12 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
 
-import './NoFilmsFound.scss'
+const FilmsNotFound = styled.div`
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+const NoFilmsFoundText = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold;
+`;
 
 function NoFilmsFound() {
   return (
-    <div className='no-films-found-wrapper'>
-      <p className='no-films-found-text'>No films found</p>
-    </div>
+    <FilmsNotFound>
+      <NoFilmsFoundText>No films found</NoFilmsFoundText>
+    </FilmsNotFound>
   )
 }
 
