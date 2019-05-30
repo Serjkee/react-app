@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Tests MoviesFound component Matching snapshot 1`] = `
-<p
-  className="movies-found"
->
-   movies found
-</p>
-`;

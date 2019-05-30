@@ -1,0 +1,248 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto; }
+
+.header-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.45));
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.find-your-movie {
+  margin: 20px 0;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold; }
+
+.netflix-logo {
+  margin: 20px 0; }
+  .netflix-logo > a {
+    text-decoration: none;
+    color: lightcoral; }
+
+.search-input {
+  margin-bottom: 30px;
+  color: #fff;
+  background-color: #000;
+  padding: 13px 20px;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid lightcoral; }
+  .search-input::placeholder {
+    color: #fff; }
+
+.search-button,
+.back-to-filter {
+  width: 150px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: lightcoral;
+  outline: none;
+  border: none;
+  padding: 0;
+  border-radius: 3px;
+  cursor: pointer; }
+  .search-button a,
+  .back-to-filter a {
+    display: block;
+    padding: 6px 0;
+    text-decoration: none;
+    color: #fff; }
+
+.back-to-filter {
+  background-color: #fff; }
+  .back-to-filter > a {
+    color: lightcoral; }
+
+.search-button {
+  padding: 6px 0; }
+
+.search-filters {
+  display: flex;
+  color: #fff; }
+  .search-filters p {
+    align-self: center;
+    margin: 0; }
+  .search-filters * {
+    text-transform: uppercase; }
+
+.main-filter {
+  display: none; }
+  .main-filter + label {
+    background-color: #666;
+    padding: 4px 10px;
+    transition: all .3s ease;
+    margin-left: 20px;
+    border-radius: 3px;
+    cursor: pointer; }
+  .main-filter:checked + label {
+    background-color: lightcoral;
+    padding: 4px 10px;
+    margin-left: 20px;
+    transition: all .3s ease;
+    border-radius: 3px;
+    cursor: pointer; }
+
+.secondary-filter {
+  display: none; }
+  .secondary-filter + label {
+    color: #000;
+    transition: all .2s ease;
+    margin-left: 15px;
+    border-radius: 3px;
+    cursor: pointer; }
+  .secondary-filter:checked + label {
+    color: lightcoral;
+    margin-left: 15px;
+    transition: all .2s ease;
+    border-radius: 3px;
+    cursor: pointer; }
+
+.header-filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px; }
+
+.film-card-wrapper {
+  display: flex;
+  padding: 50px 20px; }
+  .film-card-wrapper .film-card-image {
+    width: 100%;
+    max-width: 220px; }
+    .film-card-wrapper .film-card-image img {
+      width: 100%;
+      height: auto; }
+  .film-card-wrapper .film-card-description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-top: 30px; }
+    .film-card-wrapper .film-card-description .film-card-header {
+      color: lightcoral;
+      margin: 0;
+      font-size: 36px; }
+    .film-card-wrapper .film-card-description .film-card-genres {
+      margin-bottom: 20px;
+      color: #ccc; }
+    .film-card-wrapper .film-card-description .film-card-characteristics {
+      margin-bottom: 20px; }
+      .film-card-wrapper .film-card-description .film-card-characteristics .film-card-year {
+        margin-right: 15px;
+        font-weight: bold; }
+      .film-card-wrapper .film-card-description .film-card-characteristics .film-card-time {
+        font-weight: bold; }
+    .film-card-wrapper .film-card-description .film-card-text {
+      color: #ccc; }
+  .film-card-wrapper * {
+    color: #fff; }
+
+.movies-found {
+  font-weight: bold; }
+
+.sort-filters {
+  display: flex; }
+  .sort-filters p {
+    margin: 0; }
+  .sort-filters * {
+    font-weight: bold; }
+
+.films-by-genre {
+  font-weight: bold; }
+
+.sorting-section {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0; }
+
+.sorting-section-wrapper {
+  background-color: #ececec;
+  margin-bottom: 40px; }
+
+.card {
+  width: 30%;
+  margin-bottom: 30px;
+  margin-right: 5%; }
+  .card:nth-child(3n) {
+    margin-right: 0; }
+
+.card-image {
+  min-height: 540px;
+  margin-bottom: 10px; }
+  .card-image img {
+    width: 100%;
+    height: auto; }
+
+.card-film-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: 20px; }
+  .card-film-name .card-film-title {
+    flex-grow: 1; }
+    .card-film-name .card-film-title > a {
+      color: initial;
+      text-decoration: none; }
+  .card-film-name .card-year,
+  .card-film-name .card-vote {
+    align-self: flex-start;
+    margin-left: 10px;
+    padding: 3px 5px;
+    border: 1px solid #000;
+    border-radius: 5px; }
+
+.card-genre {
+  color: gray; }
+
+.card-description {
+  width: 90%;
+  margin: 0 auto; }
+
+.card-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  width: 1200px;
+  margin: 0 auto; }
+
+.no-films-found-wrapper {
+  flex-grow: 1; }
+
+.no-films-found-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  font-weight: bold; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  background-color: #414141; }
+
+.footer-wrapper {
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto; }
+
+.page-not-found {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+

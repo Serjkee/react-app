@@ -7,7 +7,7 @@ const CardItem = (props) => {
   return (
     <div className='card'>
       <div className='card-image'>
-        <Link as={`/movies/masked/${props.movieId}`} href={`/movies/${props.movieId}`}><a><img src={props.imgSrc} /></a></Link>
+        <Link as={`/movies/masked/${props.movieId}`} href={`/movies/${props.movieId}`}><img src={props.imgSrc} /></Link>
       </div>
       <div className='card-description'>
         <div className='card-film-name' >

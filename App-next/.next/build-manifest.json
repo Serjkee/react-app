@@ -1,0 +1,36 @@
+{
+  "devFiles": [],
+  "pages": {
+    "/Homepage/Homepage": [
+      "static/runtime/webpack-8ed9452df514b4d17d80.js",
+      "static/chunks/commons.4b585810b77f01e9381f.js",
+      "static/css/styles.8cc6ecb2.chunk.css",
+      "static/chunks/styles.ece60531110e02527eb2.js",
+      "static/runtime/main-705742af0fc3929a2ec9.js"
+    ],
+    "/Movies/Movies": [
+      "static/runtime/webpack-8ed9452df514b4d17d80.js",
+      "static/chunks/commons.4b585810b77f01e9381f.js",
+      "static/css/styles.8cc6ecb2.chunk.css",
+      "static/chunks/styles.ece60531110e02527eb2.js",
+      "static/runtime/main-705742af0fc3929a2ec9.js"
+    ],
+    "/PageNotFound/PageNotFound": [
+      "static/runtime/webpack-8ed9452df514b4d17d80.js",
+      "static/chunks/commons.4b585810b77f01e9381f.js",
+      "static/css/styles.8cc6ecb2.chunk.css",
+      "static/chunks/styles.ece60531110e02527eb2.js",
+      "static/runtime/main-705742af0fc3929a2ec9.js"
+    ],
+    "/_app": [
+      "static/runtime/webpack-8ed9452df514b4d17d80.js",
+      "static/chunks/commons.4b585810b77f01e9381f.js",
+      "static/runtime/main-705742af0fc3929a2ec9.js"
+    ],
+    "/_error": [
+      "static/runtime/webpack-8ed9452df514b4d17d80.js",
+      "static/chunks/commons.4b585810b77f01e9381f.js",
+      "static/runtime/main-705742af0fc3929a2ec9.js"
+    ]
+  }
+}

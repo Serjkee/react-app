@@ -1,4 +1,4 @@
-@import '../../../../index.scss';
+
 
 .main-filter {
   display: none;
@@ -13,7 +13,7 @@
   }
 
   &:checked + label {
-    background-color: $mainTextColor;
+    background-color: lightcoral;
     padding: 4px 10px;
     margin-left: 20px;
     transition: all .3s ease;
@@ -34,7 +34,7 @@
   }
 
   &:checked + label {
-    color: $mainTextColor;
+    color: lightcoral;
     margin-left: 15px;
     transition: all .2s ease;
     border-radius: 3px;

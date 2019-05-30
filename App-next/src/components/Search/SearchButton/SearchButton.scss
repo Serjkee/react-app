@@ -1,11 +1,11 @@
-@import '../../../index.scss';
+
 
 .search-button,
 .back-to-filter {
   width: 150px;
   text-align: center;
   text-transform: uppercase;
-  background-color: $mainTextColor;
+  background-color: lightcoral;
   outline: none;
   border: none;
   padding: 0;
@@ -24,7 +24,7 @@
   background-color: #fff;
   
   > a {
-    color: $mainTextColor;
+    color: lightcoral;
   }
 }
 

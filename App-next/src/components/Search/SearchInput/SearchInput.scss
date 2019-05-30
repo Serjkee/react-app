@@ -1,4 +1,4 @@
-@import '../../../index.scss';
+
 
 .search-input {
   margin-bottom: 30px;
@@ -8,7 +8,7 @@
   width: 100%;
   border: none;
   outline: none;
-  border-bottom: 1px solid $mainTextColor;
+  border-bottom: 1px solid lightcoral;
 
   &::placeholder {
     color: #fff;

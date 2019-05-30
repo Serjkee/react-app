@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`App Adds App snapshot testing 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
