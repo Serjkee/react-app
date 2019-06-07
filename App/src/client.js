@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {hydrate} from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
+import { loadableReady } from '@loadable/component'
 
 
 import { createStore, applyMiddleware } from 'redux'
@@ -25,13 +26,15 @@ export const store = createStore(persistedReducer, applyMiddleware(thunk))
 export const persistor = persistStore(store)
 
 if (typeof window !== 'undefined') {
-  ReactDOM.render(<Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <Router>
-        <App />
-      </Router>
-    </PersistGate>
-  </Provider>, 
-  // eslint-disable-next-line no-undef
-  document.getElementById("root"));
+  loadableReady(() => {
+    hydrate(<Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Router>
+          <App />
+        </Router>
+      </PersistGate>
+    </Provider>, 
+    // eslint-disable-next-line no-undef
+    document.getElementById("root"));
+  })
 }

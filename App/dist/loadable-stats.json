@@ -1,0 +1,57 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.29.6",
+  "hash": "3fb6d6afd9492796a20f",
+  "publicPath": "",
+  "outputPath": "C:\\Users\\Siarhei_Kremis\\Desktop\\react-mentoring\\App\\dist",
+  "assetsByChunkName": {
+    "main": "js/serverRenderer.js"
+  },
+  "assets": [
+    {
+      "name": "1050d74669c77d00745ea4f97a32df44.jpg",
+      "size": 324063,
+      "chunks": [],
+      "chunkNames": [],
+      "emitted": false
+    },
+    {
+      "name": "js/serverRenderer.js",
+      "size": 36196,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "js/serverRenderer.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "js/serverRenderer.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "children": []
+}

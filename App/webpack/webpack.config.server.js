@@ -1,5 +1,6 @@
 const merge = require('webpack-merge');
 const nodeExternals = require('webpack-node-externals');
+const LoadablePlugin = require('@loadable/webpack-plugin')
 const common = require('./webpack.config.common');
 
 module.exports = merge(common, {
@@ -28,4 +29,5 @@ module.exports = merge(common, {
      }
     ],
   },
+  plugins: [new LoadablePlugin()]
 });
