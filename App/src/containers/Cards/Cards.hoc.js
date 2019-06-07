@@ -4,16 +4,20 @@ import queryString  from 'query-string'
 import React, { Component } from 'react'
 
 import {Cards} from './Cards'
-import NoFilmsFound from '../../components/NoFilmsFound/NoFilmsFound'
+// import NoFilmsFound from '../../components/NoFilmsFound/NoFilmsFound'
 
 import {asyncHandlingSubmitFormAction} from '../../redux/movies/movies.actions'
 
 class CardsHOC extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      noFilms: null
+    }
   }
 
   componentDidMount() {
+    import('../../components/NoFilmsFound/NoFilmsFound').then((mod) => this.setState({noFilms: mod.default()}))
     const values = queryString.parse(this.props.location.search)
     if (values.limit) {
       const {search, searchBy, sortBy} = values
@@ -22,7 +26,7 @@ class CardsHOC extends Component {
   }
 
   render() {
-    return this.props.apiData.length === 0 ? <NoFilmsFound /> : <Cards {...this.props}/>
+    return this.props.apiData.length === 0 ? this.state.noFilms : <Cards {...this.props}/>
   }
 }
 
