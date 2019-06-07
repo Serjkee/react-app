@@ -4,6 +4,7 @@ import SortingSection from '../../containers/SortingSection/SortingSection.hoc'
 import Cards from '../../containers/Cards/Cards.hoc'
 import Footer from '../../containers/Footer/Footer'
 
+
 export default function Movies() {
   return (
     <>

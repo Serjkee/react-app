@@ -8,6 +8,7 @@ module.exports = {
 
   output: {
     filename: 'js/[name].js',
+    chunkFilename: '[name].bundle.js',
     path: path.resolve('./dist'),
   },
 
